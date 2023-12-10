@@ -14,6 +14,7 @@ import Link from 'next/link';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import RedditIcon from '@mui/icons-material/Reddit';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Header from './Header';
 
 const navItems = [
     {
@@ -45,37 +46,40 @@ const navItems = [
 function ResponsiveAppBar() {
 
     return (
-        <AppBar position="static" className='bg-black'>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Image src={logo} alt={'logo'} width={100} height={100} />
-                    <Box className="w-full text-center">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item}
-                                href={item.pathname}>
-                                <Button className="text-white">
-                                    {item.route}
-                                </Button>
-                            </Link>
-                        ))}
-                    </Box>
-                    <Box>
-                        <Stack direction="row">
-                            <IconButton>
-                                <FacebookRoundedIcon className='text-blue-500' />
-                            </IconButton>
-                            <IconButton>
-                                <RedditIcon className='text-orange-500' />
-                            </IconButton>
-                            <IconButton>
-                                <InstagramIcon className='text-red-400' />
-                            </IconButton>
-                        </Stack>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+        <>
+            <Header />
+            <AppBar position="static" className='bg-black'>
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <Image src={logo} alt={'logo'} width={100} height={100} />
+                        <Box className="w-full text-center">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item}
+                                    href={item.pathname}>
+                                    <Button className="text-white">
+                                        {item.route}
+                                    </Button>
+                                </Link>
+                            ))}
+                        </Box>
+                        <Box>
+                            <Stack direction="row">
+                                <IconButton>
+                                    <FacebookRoundedIcon className='text-blue-500' />
+                                </IconButton>
+                                <IconButton>
+                                    <RedditIcon className='text-orange-500' />
+                                </IconButton>
+                                <IconButton>
+                                    <InstagramIcon className='text-red-400' />
+                                </IconButton>
+                            </Stack>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </>
     );
 }
 export default ResponsiveAppBar;
