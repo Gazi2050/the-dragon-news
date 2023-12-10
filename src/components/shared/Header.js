@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <Box>
             <Container>
-                <Image src={headingImage} alt='heading' width={500} height={500} />
+                <Image src={headingImage} alt='heading' width={500} height={500} className="mx-auto" />
                 <Typography variant='body2' color="gray" textAlign='center'>Journalism Without Fear or Favour</Typography>
             </Container>
         </Box>
